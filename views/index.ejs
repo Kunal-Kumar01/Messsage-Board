@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Homepage</title>
+  </head>
+  <body>
+    <header>
+        <%- include('navbar', {links:links}) %>
+    </header>
+    <ul>
+        <% messages.forEach((message)=>{ %>
+            <%- include('messages', {
+                text:message.text,
+                user:message.user,
+                added: message.added
+            }) %>
+            <hr>
+        <%})%> 
+    </ul>
+  </body>
+</html>
